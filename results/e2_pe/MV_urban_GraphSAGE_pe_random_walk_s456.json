@@ -1,0 +1,21 @@
+{
+  "grid": "MV_urban",
+  "model": "GraphSAGE",
+  "seed": 456,
+  "experiment_tag": "_pe_random_walk",
+  "metrics": {
+    "mae_vm": 0.0005281195626594126,
+    "mae_va": 0.06258304417133331,
+    "rmse_vm": 0.0006627021939493716,
+    "rmse_va": 0.07662398368120193,
+    "max_ae_vm": 0.002878129482269287,
+    "max_ae_va": 0.2406141757965088
+  },
+  "gnn_time_ms": 0.36847847513854504,
+  "nr_time_ms": 8.221770491218194,
+  "speedup": 22.3127564998929,
+  "num_epochs": 139,
+  "best_epoch": 114,
+  "best_val_loss": 0.031709328144788745,
+  "train_time_s": 150.87230706214905
+}

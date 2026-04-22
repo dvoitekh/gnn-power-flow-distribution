@@ -1,0 +1,21 @@
+{
+  "grid": "LV_rural3",
+  "model": "GraphSAGE",
+  "seed": 123,
+  "experiment_tag": "_virtual",
+  "metrics": {
+    "mae_vm": 0.0009928160579875112,
+    "mae_va": 0.02532278560101986,
+    "rmse_vm": 0.0014176571276038885,
+    "rmse_va": 0.03417534753680229,
+    "max_ae_vm": 0.010999560356140137,
+    "max_ae_va": 0.24278658628463745
+  },
+  "gnn_time_ms": 0.4489789716899395,
+  "nr_time_ms": 7.892229477874935,
+  "speedup": 17.578171753053127,
+  "num_epochs": 200,
+  "best_epoch": 181,
+  "best_val_loss": 0.048195565044879915,
+  "train_time_s": 304.0780999660492
+}

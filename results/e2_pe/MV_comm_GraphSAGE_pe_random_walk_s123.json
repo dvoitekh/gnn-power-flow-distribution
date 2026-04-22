@@ -1,0 +1,21 @@
+{
+  "grid": "MV_comm",
+  "model": "GraphSAGE",
+  "seed": 123,
+  "experiment_tag": "_pe_random_walk",
+  "metrics": {
+    "mae_vm": 0.0006567159434780478,
+    "mae_va": 0.10059906542301178,
+    "rmse_vm": 0.0008266953518614173,
+    "rmse_va": 0.12285535037517548,
+    "max_ae_vm": 0.003884434700012207,
+    "max_ae_va": 0.4005240201950073
+  },
+  "gnn_time_ms": 0.3182920045219362,
+  "nr_time_ms": 8.009124983800575,
+  "speedup": 25.162821780050713,
+  "num_epochs": 105,
+  "best_epoch": 80,
+  "best_val_loss": 0.09637031058470408,
+  "train_time_s": 82.944571018219
+}

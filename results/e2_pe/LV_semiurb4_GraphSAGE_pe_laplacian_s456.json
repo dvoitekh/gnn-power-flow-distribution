@@ -1,0 +1,21 @@
+{
+  "grid": "LV_semiurb4",
+  "model": "GraphSAGE",
+  "seed": 456,
+  "experiment_tag": "_pe_laplacian",
+  "metrics": {
+    "mae_vm": 0.002422343473881483,
+    "mae_va": 0.057973578572273254,
+    "rmse_vm": 0.0030062468722462654,
+    "rmse_va": 0.0722256451845169,
+    "max_ae_vm": 0.009226500988006592,
+    "max_ae_va": 0.2569303512573242
+  },
+  "gnn_time_ms": 0.24920853320509195,
+  "nr_time_ms": 8.095937489997596,
+  "speedup": 32.48659821505733,
+  "num_epochs": 37,
+  "best_epoch": 12,
+  "best_val_loss": 0.1530785326162974,
+  "train_time_s": 15.573071002960205
+}

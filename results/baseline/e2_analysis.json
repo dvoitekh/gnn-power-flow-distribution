@@ -1,0 +1,144 @@
+{
+  "graph_properties": [
+    {
+      "grid": "MV_rural",
+      "num_buses": 97,
+      "num_edges": 103,
+      "avg_degree": 2.1237113402061856,
+      "clustering_coeff": 0.0,
+      "diameter": 28,
+      "avg_rx_ratio": 2.616126775741577,
+      "fraction_bridges": 0.05825242718446602,
+      "voltage_level": "MV"
+    },
+    {
+      "grid": "MV_semiurb",
+      "num_buses": 117,
+      "num_edges": 125,
+      "avg_degree": 2.1367521367521367,
+      "clustering_coeff": 0.0,
+      "diameter": 22,
+      "avg_rx_ratio": 2.817805767059326,
+      "fraction_bridges": 0.04,
+      "voltage_level": "MV"
+    },
+    {
+      "grid": "MV_urban",
+      "num_buses": 144,
+      "num_edges": 158,
+      "avg_degree": 2.1944444444444446,
+      "clustering_coeff": 0.0,
+      "diameter": 25,
+      "avg_rx_ratio": 1.1247397661209106,
+      "fraction_bridges": 0.0,
+      "voltage_level": "MV"
+    },
+    {
+      "grid": "MV_comm",
+      "num_buses": 107,
+      "num_edges": 115,
+      "avg_degree": 2.149532710280374,
+      "clustering_coeff": 0.0,
+      "diameter": 21,
+      "avg_rx_ratio": 1.905737042427063,
+      "fraction_bridges": 0.06956521739130435,
+      "voltage_level": "MV"
+    },
+    {
+      "grid": "LV_rural1",
+      "num_buses": 15,
+      "num_edges": 14,
+      "avg_degree": 1.8666666666666667,
+      "clustering_coeff": 0.0,
+      "diameter": 9,
+      "avg_rx_ratio": 2.4147212505340576,
+      "fraction_bridges": 1.0,
+      "voltage_level": "LV"
+    },
+    {
+      "grid": "LV_rural2",
+      "num_buses": 97,
+      "num_edges": 96,
+      "avg_degree": 1.9793814432989691,
+      "clustering_coeff": 0.0,
+      "diameter": 56,
+      "avg_rx_ratio": 2.545680046081543,
+      "fraction_bridges": 1.0,
+      "voltage_level": "LV"
+    },
+    {
+      "grid": "LV_rural3",
+      "num_buses": 129,
+      "num_edges": 128,
+      "avg_degree": 1.9844961240310077,
+      "clustering_coeff": 0.0,
+      "diameter": 47,
+      "avg_rx_ratio": 2.5516185760498047,
+      "fraction_bridges": 1.0,
+      "voltage_level": "LV"
+    },
+    {
+      "grid": "LV_semiurb4",
+      "num_buses": 44,
+      "num_edges": 43,
+      "avg_degree": 1.9545454545454546,
+      "clustering_coeff": 0.0,
+      "diameter": 24,
+      "avg_rx_ratio": 2.5150797367095947,
+      "fraction_bridges": 1.0,
+      "voltage_level": "LV"
+    },
+    {
+      "grid": "LV_semiurb5",
+      "num_buses": 111,
+      "num_edges": 110,
+      "avg_degree": 1.981981981981982,
+      "clustering_coeff": 0.0,
+      "diameter": 52,
+      "avg_rx_ratio": 1.5750421285629272,
+      "fraction_bridges": 1.0,
+      "voltage_level": "LV"
+    },
+    {
+      "grid": "LV_urban6",
+      "num_buses": 59,
+      "num_edges": 58,
+      "avg_degree": 1.9661016949152543,
+      "clustering_coeff": 0.0,
+      "diameter": 28,
+      "avg_rx_ratio": 1.5636142492294312,
+      "fraction_bridges": 1.0,
+      "voltage_level": "LV"
+    }
+  ],
+  "correlations": {
+    "avg_degree": {
+      "rho": -0.2690019251295058,
+      "p": 0.05889131053148897
+    },
+    "clustering_coeff": {
+      "rho": NaN,
+      "p": NaN
+    },
+    "diameter": {
+      "rho": 0.5147164623647527,
+      "p": 0.00013116635374291077
+    },
+    "avg_rx_ratio": {
+      "rho": 0.17877168297844287,
+      "p": 0.21417409793942158
+    },
+    "fraction_bridges": {
+      "rho": 0.4386865780373448,
+      "p": 0.0014388201698005028
+    },
+    "num_buses": {
+      "rho": -0.037266730232332825,
+      "p": 0.797225300678356
+    }
+  },
+  "mann_whitney": {
+    "U": 144.0,
+    "p_value": 0.0020744663834453016
+  }
+}

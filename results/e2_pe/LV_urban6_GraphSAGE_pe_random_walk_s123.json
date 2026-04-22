@@ -1,0 +1,21 @@
+{
+  "grid": "LV_urban6",
+  "model": "GraphSAGE",
+  "seed": 123,
+  "experiment_tag": "_pe_random_walk",
+  "metrics": {
+    "mae_vm": 0.0006183183286339045,
+    "mae_va": 0.043983086943626404,
+    "rmse_vm": 0.0007906891405582428,
+    "rmse_va": 0.055483654141426086,
+    "max_ae_vm": 0.0032982230186462402,
+    "max_ae_va": 0.1933356523513794
+  },
+  "gnn_time_ms": 0.261521025095135,
+  "nr_time_ms": 7.441332971211523,
+  "speedup": 28.454052474383456,
+  "num_epochs": 88,
+  "best_epoch": 63,
+  "best_val_loss": 0.02851453557610512,
+  "train_time_s": 39.2220139503479
+}

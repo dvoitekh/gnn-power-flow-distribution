@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Data & models (large, regenerable / retrainable)
+data/
+trained_models/
+
+# Local logs
+*.log
+e1_rerun.log
+e5.log
+experiments.log
+texput.log
+
+# results/ kept for reproducibility (raw JSON metrics, ~1.6M)
+
+# Generated figures
+figures/
+figures_png/
+figures_tiff/
+
+# Generated paper / submission files
+*.docx
+*.doc
+*.pdf
+*.zip
+*.tar.gz
+author_photos/
+cover_letter*
+
+# LaTeX auxiliary
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.toc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
