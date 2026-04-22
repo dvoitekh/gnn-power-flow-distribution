@@ -2,15 +2,39 @@
 
 Code and data for the paper **"Bridging the MV/LV Gap: Virtual Slack Nodes and Positional Encodings for GNN-Based Power Flow on Radial Distribution Networks"** by D. Voitekh and A. Tymoshenko.
 
-## What this is
+## TL;DR
 
-A GNN surrogate for AC power flow on SimBench distribution grids. Combines three techniques to eliminate the MV/LV accuracy gap:
+A GNN surrogate for AC power flow on radial distribution grids. Three techniques — **virtual slack edges**, **random-walk positional encodings**, and **residual GraphSAGE (d=8)** — combined close the MV/LV accuracy gap on SimBench.
 
-1. **Virtual slack edges** — bidirectional shortcut connections from the slack bus to every node (reduces effective graph diameter to 2).
-2. **Random walk positional encodings** (k=16) — topology-aware node features.
-3. **Residual GraphSAGE** with 8 layers — deep architecture without oversmoothing.
+| Model | MAE $V_m$ ($\times 10^{-3}$ p.u.) | LV/MV ratio | Speedup vs NR |
+|-------|-----------------------------------|-------------|---------------|
+| Baseline GraphSAGE (d=4) | 0.88 ± 0.25 | 1.41× (p=0.010) | 25× |
+| **Combined** | **0.49** (**−44%**, p=0.002) | **1.21× (p=0.182)** | 2–6× |
 
-On 10 SimBench grids × 3 seeds, the combined model reduces voltage-magnitude MAE by 43.8% (Wilcoxon p=0.002) and renders the LV/MV gap statistically non-significant (p=0.182).
+## The idea in one picture
+
+LV distribution feeders have long diameters (up to 56 hops in SimBench), but a standard 4-layer GNN can only aggregate information from nodes within 4 hops — so the slack reference voltage never reaches the far end. Virtual slack edges add a direct 2-hop shortcut from every bus to the slack.
+
+![Virtual slack edges concept](assets/fig_virtual_slack_concept.png)
+
+Formally: for any connected graph $\mathcal{G}$ with slack vertex $s$, the augmented graph $\mathcal{G}'$ with bidirectional slack edges satisfies $\mathrm{diam}(\mathcal{G}') \leq 2$ (Proposition 1 in the paper).
+
+## Evidence: baseline error tracks graph diameter
+
+Spearman $\rho = +0.95$ ($p < 10^{-4}$) between grid diameter and baseline MAE. The combined model flattens this relationship — the method specifically targets high-diameter grids.
+
+![Diameter vs MAE correlation](assets/fig_diameter_correlation.png)
+
+## Results at a glance
+
+### MV/LV gap before and after
+![MV/LV gap](assets/fig1_mvlv_gap_boxplot.png)
+
+### Speed–accuracy Pareto frontier
+![Pareto](assets/fig2_pareto_speedup_accuracy.png)
+
+### Per-grid comparison
+![Per-grid](assets/fig3_per_grid_comparison.png)
 
 ## Requirements
 
@@ -18,12 +42,7 @@ On 10 SimBench grids × 3 seeds, the combined model reduces voltage-magnitude MA
 - PyTorch 2.2
 - PyTorch Geometric 2.5
 - pandapower 2.14
-- simbench
-- scipy, numpy, matplotlib
-
-```bash
-pip install -r requirements.txt
-```
+- simbench, scipy, numpy, matplotlib
 
 ## Reproducing the results
 
@@ -37,6 +56,7 @@ python run_all_experiments.py --experiment all --seeds 42 123 456
 # 3. Analyze and generate figures
 python analyze_results.py
 python compute_correlations.py
+python analyze_physics_loss.py
 python generate_paper_figures.py
 ```
 
@@ -47,17 +67,17 @@ python generate_paper_figures.py
 - `models.py` — GCN, GAT, GraphSAGE, ResidualGraphSAGE, MPNN, MLP
 - `train.py` — AdamW + OneCycleLR + early stopping
 - `evaluate.py` — MAE/RMSE/MaxAE + GNN vs NR timing
-- `run_all_experiments.py` — full experiment runner
-- `analyze_results.py` — statistical tests, comparisons
+- `run_all_experiments.py` — full experiment runner (baseline/E1/E2/E3/E4/E5)
+- `analyze_results.py` — main statistical analysis and tables
 - `compute_correlations.py` — Spearman/Pearson correlations between grid structure and MAE
-- `analyze_physics_loss.py` — physics-loss ineffectiveness quantification
-- `generate_paper_figures.py` — PDF figures
-- `results/` — raw JSON results (baseline, e1_physics, e2_pe, e3_deep, e4_virtual, e5_combined)
-- `paper/` — LaTeX source
+- `analyze_physics_loss.py` — quantitative evidence for physics-loss ineffectiveness
+- `generate_paper_figures.py` — paper PDF figures
+- `generate_readme_figures.py` — README PNG figures
+- `results/` — raw JSON metrics for all 342 experiments (10 grids × ~11 configs × 3 seeds)
 
 ## Critical SimBench/pandapower fixes
 
-The following corrections are essential for NR convergence on the full set of grids:
+Required for NR convergence on the full set of grids:
 
 1. Transformer shift degrees set to zero (Yzn5 divergence fix)
 2. `pandapower.create_continuous_bus_index(net)` (singular Jacobian fix)
@@ -70,4 +90,4 @@ MIT — see `LICENSE`.
 
 ## Citation
 
-To be added upon acceptance.
+Citation entry will be added once the paper is accepted.
