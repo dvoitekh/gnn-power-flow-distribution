@@ -1,0 +1,21 @@
+{
+  "grid": "MV_comm",
+  "model": "ResidualGraphSAGE",
+  "seed": 42,
+  "experiment_tag": "_combined",
+  "metrics": {
+    "mae_vm": 0.00039259609184227884,
+    "mae_va": 0.02949780784547329,
+    "rmse_vm": 0.0005188413779251277,
+    "rmse_va": 0.03773568570613861,
+    "max_ae_vm": 0.0028177499771118164,
+    "max_ae_va": 0.16228604316711426
+  },
+  "gnn_time_ms": 3.312500019092113,
+  "nr_time_ms": 10.099666542373598,
+  "speedup": 3.048955919747196,
+  "num_epochs": 200,
+  "best_epoch": 192,
+  "best_val_loss": 0.01195931271960338,
+  "train_time_s": 1086.0392208099365
+}

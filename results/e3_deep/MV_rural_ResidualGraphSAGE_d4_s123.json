@@ -1,0 +1,21 @@
+{
+  "grid": "MV_rural",
+  "model": "ResidualGraphSAGE",
+  "seed": 123,
+  "experiment_tag": "_d4",
+  "metrics": {
+    "mae_vm": 0.0007582071702927351,
+    "mae_va": 0.09262772649526596,
+    "rmse_vm": 0.0010413647396489978,
+    "rmse_va": 0.1176711842417717,
+    "max_ae_vm": 0.006271839141845703,
+    "max_ae_va": 0.4693796634674072
+  },
+  "gnn_time_ms": 0.5797084595542401,
+  "nr_time_ms": 7.328687497647479,
+  "speedup": 12.642022687201745,
+  "num_epochs": 199,
+  "best_epoch": 174,
+  "best_val_loss": 0.09613544573386511,
+  "train_time_s": 132.12748908996582
+}

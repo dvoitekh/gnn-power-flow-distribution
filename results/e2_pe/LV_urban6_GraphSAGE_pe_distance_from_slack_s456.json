@@ -1,0 +1,21 @@
+{
+  "grid": "LV_urban6",
+  "model": "GraphSAGE",
+  "seed": 456,
+  "experiment_tag": "_pe_distance_from_slack",
+  "metrics": {
+    "mae_vm": 0.0006646245019510388,
+    "mae_va": 0.04676492139697075,
+    "rmse_vm": 0.0008525530574843287,
+    "rmse_va": 0.058581504970788956,
+    "max_ae_vm": 0.0040413737297058105,
+    "max_ae_va": 0.21923398971557617
+  },
+  "gnn_time_ms": 0.26477049686945975,
+  "nr_time_ms": 7.501437532482669,
+  "speedup": 28.331848227716684,
+  "num_epochs": 91,
+  "best_epoch": 66,
+  "best_val_loss": 0.028371277699867883,
+  "train_time_s": 42.799734115600586
+}

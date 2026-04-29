@@ -1,0 +1,21 @@
+{
+  "grid": "MV_semiurb",
+  "model": "ResidualGraphSAGE",
+  "seed": 42,
+  "experiment_tag": "_m3_novirtual",
+  "metrics": {
+    "mae_vm": 0.0006013858364894986,
+    "mae_va": 0.08657239377498627,
+    "rmse_vm": 0.0007656156667508185,
+    "rmse_va": 0.10797592997550964,
+    "max_ae_vm": 0.0056726932525634766,
+    "max_ae_va": 0.40277284383773804
+  },
+  "gnn_time_ms": 1.1596879921853542,
+  "nr_time_ms": 7.883041515015066,
+  "speedup": 6.797553797345097,
+  "num_epochs": 200,
+  "best_epoch": 178,
+  "best_val_loss": 0.1714031168818474,
+  "train_time_s": 343.65018582344055
+}

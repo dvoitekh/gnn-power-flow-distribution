@@ -1,0 +1,21 @@
+{
+  "grid": "MV_rural",
+  "model": "DropEdgeGraphSAGE",
+  "seed": 456,
+  "experiment_tag": "_d4",
+  "metrics": {
+    "mae_vm": 0.000861828972119838,
+    "mae_va": 0.09713902324438095,
+    "rmse_vm": 0.0011786464601755142,
+    "rmse_va": 0.12249675393104553,
+    "max_ae_vm": 0.0061190128326416016,
+    "max_ae_va": 0.4363374710083008
+  },
+  "gnn_time_ms": 0.5584169994108379,
+  "nr_time_ms": 7.249646005220711,
+  "speedup": 12.982495183473114,
+  "num_epochs": 193,
+  "best_epoch": 168,
+  "best_val_loss": 0.11276073505481084,
+  "train_time_s": 133.08053278923035
+}

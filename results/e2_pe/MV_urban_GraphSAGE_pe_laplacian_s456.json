@@ -1,0 +1,21 @@
+{
+  "grid": "MV_urban",
+  "model": "GraphSAGE",
+  "seed": 456,
+  "experiment_tag": "_pe_laplacian",
+  "metrics": {
+    "mae_vm": 0.0012048868229612708,
+    "mae_va": 0.0695779100060463,
+    "rmse_vm": 0.001500675454735756,
+    "rmse_va": 0.08671005815267563,
+    "max_ae_vm": 0.005612671375274658,
+    "max_ae_va": 0.34688615798950195
+  },
+  "gnn_time_ms": 0.35927098360843956,
+  "nr_time_ms": 8.243187505286187,
+  "speedup": 22.9442061323556,
+  "num_epochs": 40,
+  "best_epoch": 15,
+  "best_val_loss": 0.1047142951687177,
+  "train_time_s": 43.56681299209595
+}
